@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TFTP Server</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
+    <meta charset="UTF-8">
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            margin-bottom: 10px;
+        }
+        a[href^="/edit"] {
+            background-color: #4CAF50; /* Зеленый цвет фона */
+            color: #000; /* Черный цвет текста */
+            padding: 5px 10px; /* Подходящая отступ */
+            border-radius: 5px; /* Закругление углов */
+            text-decoration: none; /* Убираем подчеркивание ссылки */
+        }
+        a[href^="/view"] {
+            background-color: #dff211; /* Зеленый цвет фона */
+            color: #000; /* Черный цвет текста */
+            padding: 5px 10px; /* Подходящая отступ */
+            border-radius: 5px; /* Закругление углов */
+            text-decoration: none; /* Убираем подчеркивание ссылки */
+        }
+        form {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        input[type="file"] {
+            margin-top: 20px;
+            display: block;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #f21111;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>TFTP Server</h1>
+    <a href="/logout" class="logout-link">Logout</a>
+    <ul>
+    {% for file in files %}
+        <li>
+            <a href="/view/{{ file.filename }}">Просмотреть файл: {{ file.filename }}</a>
+            <a href="/edit/{{ file.filename }}">Редактировать файл: {{ file.filename }}</a>
+            
+            <!-- Отображение описания файла -->
+            {% if file.description %}
+                <p>Описание: {{ file.description }}</p>
+            {% endif %}
+            
+            <!-- Форма для добавления описания к файлу -->
+            <form action="{{ url_for('add_description', filename=file.filename) }}" method="post">
+                <input type="text" name="description" placeholder="Введите описание..." value="{{ file.description }}">
+                <input type="submit" value="Добавить описание">
+            </form>
+            
+            <form action="/delete/{{ file.filename }}" method="post">
+                <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this file?')">
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <!-- Форма для загрузки нового файла на сервер -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>

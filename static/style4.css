@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+}
+ul {
+    list-style: none;
+    padding: 5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: calc(12.33% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    margin-bottom: 10px;
+}
+a[href^="/edit"] {
+    background-color: #4CAF50; /* Зеленый цвет фона */
+    color: #000; /* Черный цвет текста */
+    padding: 5px 10px; /* Подходящая отступ */
+    border-radius: 5px; /* Закругление углов */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+}
+a[href^="/view"] {
+    background-color: #dff211; /* Зеленый цвет фона */
+    color: #000; /* Черный цвет текста */
+    padding: 5px 10px; /* Подходящая отступ */
+    border-radius: 5px; /* Закругление углов */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+}
+input[type="file"] {
+    margin-top: 20px;
+    display: block;
+    padding: 10px 10px;
+    background-color: #f21111;
+    color: white;
+    border: none;
+    text-align: justify;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p {
+    font-size: 20px;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 200;
+    line-height: 1.0;
+    border-radius: 5px;
+    color: #0000ff;
+}
+input[type="submit"] {
+    padding: 10px 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    text-align: justify;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+a.logout-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #000000;
+    color: #00ffcc;
+    font-size: 16px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+a.logout-link:hover {
+    background-color: #00ffcc;
+    color: #000000;
+}
+
+       

@@ -1,0 +1,38 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-image: url('background.jpg');
+    background-size: cover;
+    color: #00ffcc;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #000000;
+    color: #00ffcc;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="submit"]:hover {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 0 5px #ff00ff;
+}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View File - {{ filename }}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style3.css') }}">
+</head>
+<body>
+    <h1>Просмотр конфигурации {{ filename }}</h1>
+    <pre>{{ content }}</pre>
+</body>
+</html>

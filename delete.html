@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete File - {{ filename }}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Delete {{ filename }}</h1>
+    <p>Are you sure you want to delete this file?</p>
+    <form action="" method="post">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
